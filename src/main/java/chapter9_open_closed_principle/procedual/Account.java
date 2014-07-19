@@ -4,6 +4,8 @@ package chapter9_open_closed_principle.procedual;
 public class Account {
 	private Integer id;
 	private String name;
+	private Integer type;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -15,5 +17,11 @@ public class Account {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
 	}
 }
