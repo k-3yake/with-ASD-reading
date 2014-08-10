@@ -9,9 +9,8 @@ public class SalariedClassfication implements PaymentClassfication{
 		this.salary = salary;
 	}
 
-	@Override
+
 	public BigDecimal getSalary(){
 		return salary; 
 	};
-
 }

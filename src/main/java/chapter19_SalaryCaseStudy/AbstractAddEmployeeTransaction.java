@@ -3,6 +3,8 @@ package chapter19_SalaryCaseStudy;
 import chapter19_SalaryCaseStudy.domain.Employee;
 import chapter19_SalaryCaseStudy.domain.HoldMethod;
 import chapter19_SalaryCaseStudy.domain.MonthlySchedule;
+import chapter19_SalaryCaseStudy.domain.PaymentClassfication;
+import chapter19_SalaryCaseStudy.domain.PaymentSchedule;
 import chapter19_SalaryCaseStudy.domain.SalariedClassfication;
 
 
@@ -25,7 +27,7 @@ public abstract class AbstractAddEmployeeTransaction {
 		PayrollDatabase.addEmployee(employee);
 	}
 
-	public abstract MonthlySchedule getSchedule();
+	public abstract PaymentSchedule getSchedule();
 	
-	public abstract SalariedClassfication getPaymentClassfication();
+	public abstract PaymentClassfication getPaymentClassfication();
 }

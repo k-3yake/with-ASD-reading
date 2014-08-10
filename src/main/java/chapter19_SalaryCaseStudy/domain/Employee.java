@@ -1,5 +1,7 @@
 package chapter19_SalaryCaseStudy.domain;
 
+import chapter19_SalaryCaseStudy.Affilation;
+
 
 public class Employee {
 	private Integer id;
@@ -7,6 +9,7 @@ public class Employee {
 	private PaymentClassfication paymentClassfication;
 	private PaymentSchedule paymentSchedule;
 	private PayMethod payMethod;
+	private Affilation affilation;
 	
 	public Employee(Integer id, String name) {
 		this.id = id;
@@ -43,5 +46,13 @@ public class Employee {
 
 	public void setPayMethod(PayMethod payMethod) {
 		this.payMethod = payMethod;
+	}
+
+	public Affilation getAffilation() {
+		return affilation;
+	}
+
+	public void setAffilation(Affilation affilation) {
+		this.affilation = affilation;
 	}
 }
