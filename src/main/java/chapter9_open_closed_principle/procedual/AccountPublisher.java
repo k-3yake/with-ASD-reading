@@ -3,7 +3,6 @@ package chapter9_open_closed_principle.procedual;
 import java.util.ArrayList;
 import java.util.List;
 
-import chapter9_open_closed_principle.ContractIdGenerater;
 import chapter9_open_closed_principle.DbGateway;
 
 

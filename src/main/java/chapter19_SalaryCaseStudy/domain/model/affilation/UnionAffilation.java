@@ -9,12 +9,22 @@ import chapter19_SalaryCaseStudy.domain.value.DateOnly;
 
 public class UnionAffilation implements Affilation {
 	private BigDecimal dues;
+	private Integer memberId;
 	private Map<DateOnly, ServiceCharge> serviceCharges = new HashMap<>();
 
-	public UnionAffilation(BigDecimal dues) {
+	public UnionAffilation(Integer memberId,BigDecimal dues) {
+		this.memberId = memberId;
 		this.dues = dues;
 	}
-	
+
+	public Integer getMemberId() {
+		return memberId;
+	}
+
+	public BigDecimal getDues() {
+		return dues;
+	}
+
 	@Override
 	public BigDecimal getServiceCharge(DateOnly date) {
 		return serviceCharges.get(date).getAmount();
@@ -23,4 +33,5 @@ public class UnionAffilation implements Affilation {
 	public void addServiceCharge(ServiceCharge serviceCharge) {
 		serviceCharges.put(serviceCharge.getDate(), serviceCharge);
 	}
+
 }

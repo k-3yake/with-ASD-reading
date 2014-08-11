@@ -40,4 +40,10 @@ public class PayrollDatabase {
 		return employee;
 	}
 
+	public static void deleteUnionMember(Integer memberId) {
+//		if(!unionMembers.containsKey(memberId)){
+//			throw new RuntimeException("組合員に登録されていんません。memberId="+ memberId);
+//		}
+		unionMembers.remove(memberId);
+	}
 }

@@ -31,7 +31,7 @@ public class AddServiceChargeTransactionTest {
 		DateOnly date = new DateOnly(2000, 1, 2);
 		new AddHourlyEmployee(empId, "name", "address").execute();
 		Employee employee = PayrollDatabase.getEmployee(empId);
-		Affilation affilation = new UnionAffilation(new BigDecimal(1));
+		Affilation affilation = new UnionAffilation(memberId,new BigDecimal(1));
 		employee.setAffilation(affilation);
 		PayrollDatabase.addUnionMember(memberId,employee);
 		//実行

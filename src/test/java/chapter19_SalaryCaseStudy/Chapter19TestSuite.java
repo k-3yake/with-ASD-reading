@@ -11,6 +11,16 @@ import chapter19_SalaryCaseStudy.application.transaction.DeleteEmployeeTransacti
 import chapter19_SalaryCaseStudy.application.transaction.addemployee.AddCommisionedEmployeeTest;
 import chapter19_SalaryCaseStudy.application.transaction.addemployee.AddHourlyEmployeeTest;
 import chapter19_SalaryCaseStudy.application.transaction.addemployee.AddSalariedEmployeeTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeAddressTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeCommissionedTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeDirectTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeHoldTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeHourlyTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeMailTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeMemberTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeNameTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeSalariedTest;
+import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeUnaffilatedTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
@@ -21,7 +31,16 @@ import chapter19_SalaryCaseStudy.application.transaction.addemployee.AddSalaried
 	AddTimeCardTransactionTest.class,
 	AddSalesReciptTransactionTest.class,
 	AddServiceChargeTransactionTest.class,
-	
+	ChangeNameTest.class,
+	ChangeAddressTest.class,
+	ChangeHourlyTest.class,
+	ChangeCommissionedTest.class,
+	ChangeSalariedTest.class,
+	ChangeDirectTest.class,
+	ChangeMailTest.class,
+	ChangeHoldTest.class,
+	ChangeMemberTest.class,
+	ChangeUnaffilatedTest.class,
 })
 public class Chapter19TestSuite {
 

@@ -10,14 +10,14 @@ import chapter19_SalaryCaseStudy.domain.model.paymethod.PayMethod;
 public class Employee {
 	private Integer id;
 	private String name;
+	private String address;
 	private PaymentClassfication paymentClassfication;
 	private PaymentSchedule paymentSchedule;
 	private PayMethod payMethod;
 	private Affilation affilation;
 	
-	public Employee(Integer id, String name) {
+	public Employee(Integer id) {
 		this.id = id;
-		this.name = name;
 	}
 
 	public Integer getId() {
@@ -48,6 +48,18 @@ public class Employee {
 		return payMethod;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+
 	public void setPayMethod(PayMethod payMethod) {
 		this.payMethod = payMethod;
 	}
@@ -59,4 +71,6 @@ public class Employee {
 	public void setAffilation(Affilation affilation) {
 		this.affilation = affilation;
 	}
+	
+	
 }

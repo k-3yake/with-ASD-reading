@@ -19,7 +19,9 @@ public abstract class AbstractAddEmployeeTransaction {
 	}
 
 	public void execute() {
-		Employee employee = new Employee(empId,name);	
+		Employee employee = new Employee(empId);
+		employee.setName(name);
+		employee.setAddress(address);
 		employee.setPaymentClassfication(getPaymentClassfication());
 		employee.setPaymentSchedule(getSchedule());
 		employee.setPayMethod(new HoldMethod());
