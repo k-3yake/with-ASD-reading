@@ -29,7 +29,7 @@ public class AddServiceChargeTransactionTest {
 		Integer memberId = new Integer(1);
 		BigDecimal serviceChargeAmount = new BigDecimal(2);
 		DateOnly date = new DateOnly(2000, 1, 2);
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		Employee employee = PayrollDatabase.getEmployee(empId);
 		Affilation affilation = new UnionAffilation(memberId,new BigDecimal(1));
 		employee.setAffilation(affilation);
@@ -52,7 +52,7 @@ public class AddServiceChargeTransactionTest {
 		Integer memberId = new Integer(1);
 		BigDecimal serviceChargeAmount = new BigDecimal(2);
 		DateOnly date = new DateOnly(2000, 1, 2);
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		Employee employee = PayrollDatabase.getEmployee(empId);
 		Affilation affilation = new NoAffilation();
 		employee.setAffilation(affilation);

@@ -26,7 +26,7 @@ public class ChangeHourlyTest {
 		Integer empId = 1;
 		new AddCommisionedEmployee(empId, "name", "address", new BigDecimal(0)).execute();
 		//実行
-		new ChangeHourly(empId).exec();
+		new ChangeHourly(empId,new BigDecimal(1)).exec();
 		//検証
 		Employee employee = PayrollDatabase.getEmployee(empId);
 		assertThat(employee.getPaymentClassfication(), is(instanceOf(HourlyClassfication.class)));

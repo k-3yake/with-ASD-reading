@@ -1,5 +1,8 @@
 package chapter19_SalaryCaseStudy.domain.value;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class DateOnly {
 	private Integer year;
 	private Integer month;
@@ -9,6 +12,14 @@ public class DateOnly {
 		this.year = year;
 		this.month = month;
 		this.date = date;
+	}
+	
+	public Date toDate(){
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.MONTH,month - 1);
+		calendar.set(Calendar.DATE, date);
+		return calendar.getTime();
 	}
 
 	@Override
@@ -47,6 +58,4 @@ public class DateOnly {
 			return false;
 		return true;
 	}
-	
-
 }

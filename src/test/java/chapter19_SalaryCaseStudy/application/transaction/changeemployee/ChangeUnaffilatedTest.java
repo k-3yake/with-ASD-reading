@@ -27,7 +27,7 @@ public class ChangeUnaffilatedTest {
 	public void 組合員登録削除のテスト_組合員に登録されている場合_登録を削除する() throws Exception {
 		Integer empId = 1;
 		Integer memberId = 10;
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		new ChangeMember(empId, memberId, new BigDecimal(1)).exec();;
 		//実行
 		new ChangeUnaffilated(empId).exec();
@@ -39,7 +39,7 @@ public class ChangeUnaffilatedTest {
 	@Test(expected=BusinessExcepction.class)
 	public void 組合員登録削除のテスト_組合員に登録されていない場合_例外を発生させる() throws Exception {
 		Integer empId = 1;
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		//実行
 		new ChangeUnaffilated(empId).exec();
 	}

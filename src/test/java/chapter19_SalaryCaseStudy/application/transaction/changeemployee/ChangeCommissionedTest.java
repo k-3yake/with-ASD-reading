@@ -24,7 +24,7 @@ public class ChangeCommissionedTest {
 	@Test
 	public void 歩合制への変更のテスト() throws Exception {
 		Integer empId = 1;
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		//実行
 		BigDecimal salary = new BigDecimal(2);
 		new ChangeCommissioned(empId,salary).exec();;

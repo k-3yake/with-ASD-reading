@@ -13,6 +13,7 @@ import chapter19_SalaryCaseStudy.application.transaction.addemployee.AddHourlyEm
 import chapter19_SalaryCaseStudy.domain.model.TimeCard;
 import chapter19_SalaryCaseStudy.domain.model.paymentclassfication.HourlyClassfication;
 import chapter19_SalaryCaseStudy.domain.value.DateOnly;
+import chapter19_SalaryCaseStudy.domain.value.Hours;
 import chapter19_SalaryCaseStudy.infla.BusinessExcepction;
 import chapter19_SalaryCaseStudy.infla.PayrollDatabase;
 
@@ -28,14 +29,14 @@ public class AddTimeCardTransactionTest {
 		//準備
 		Integer empId = 1;
 		DateOnly date = new DateOnly(2000, 1, 2);
-		BigDecimal hours = new BigDecimal(3.5);
-		new AddHourlyEmployee(empId,"name","address").execute();
+		Hours hours = new Hours(3.5);
+		new AddHourlyEmployee(empId,"name","address",new BigDecimal(0)).execute();
 		//実行
 		new AddTimeCardTransaction(empId,date,hours).exec();
 		//検証
 		TimeCard timeCard = ((HourlyClassfication)PayrollDatabase.getEmployee(empId).getPaymentClassfication()).getTimeCard(date);
 		assertThat(timeCard.getDate(), is(new DateOnly(2000,1,2)));
-		assertThat(timeCard.hours(), is(hours));
+		assertThat(timeCard.normalTimes(), is(hours));
 	}
 
 	@Test(expected=BusinessExcepction.class)
@@ -43,7 +44,7 @@ public class AddTimeCardTransactionTest {
 		//準備
 		Integer empId = 1;
 		DateOnly date = new DateOnly(2000, 1, 2);
-		BigDecimal hours = new BigDecimal(3);
+		Hours hours = new Hours(3);
 		//実行
 		new AddTimeCardTransaction(empId,date,hours).exec();
 	}
@@ -53,7 +54,7 @@ public class AddTimeCardTransactionTest {
 		//準備
 		Integer empId = 1;
 		DateOnly date = new DateOnly(2000, 1, 2);
-		BigDecimal hours = new BigDecimal(3);
+		Hours hours = new Hours(3);
 		new AddCommisionedEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		//実行
 		new AddTimeCardTransaction(empId,date,hours).exec();

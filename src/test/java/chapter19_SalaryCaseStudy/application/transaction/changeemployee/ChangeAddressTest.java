@@ -3,6 +3,8 @@ package chapter19_SalaryCaseStudy.application.transaction.changeemployee;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.math.BigDecimal;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class ChangeAddressTest {
 	@Test
 	public void アドレス変更のテスト_従業員が存在する場合_アドレスを変更する() throws Exception {
 		Integer empId = 1;
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		//実行
 		String changedAddress = "changedAdress";
 		new ChangeAddress(empId,changedAddress).exec();

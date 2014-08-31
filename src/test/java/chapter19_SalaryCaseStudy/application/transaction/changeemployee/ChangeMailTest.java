@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.math.BigDecimal;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +22,7 @@ public class ChangeMailTest {
 	@Test
 	public void 給与の小切手郵送払いへの変更のテスト() throws Exception {
 		Integer empId = 1;
-		new AddHourlyEmployee(empId, "name", "address").execute();
+		new AddHourlyEmployee(empId, "name", "address",new BigDecimal(0)).execute();
 		//実行
 		new ChangeMail(empId,"address2").exec();
 		//検証

@@ -5,6 +5,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.math.BigDecimal;
+
 import org.junit.After;
 import org.junit.Test;
 
@@ -26,7 +28,7 @@ public class AddHourlyEmployeeTest {
 		//準備
 		Integer empId = 1;
 		String name = "Bob";
-		AddHourlyEmployee transaction = new AddHourlyEmployee(empId,name,"Home");
+		AddHourlyEmployee transaction = new AddHourlyEmployee(empId,name,"Home",new BigDecimal(0));
 		//実行
 		transaction.execute();
 		//検証

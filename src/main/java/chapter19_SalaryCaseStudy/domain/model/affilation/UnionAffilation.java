@@ -6,6 +6,7 @@ import java.util.Map;
 
 import chapter19_SalaryCaseStudy.domain.model.ServiceCharge;
 import chapter19_SalaryCaseStudy.domain.value.DateOnly;
+import chapter19_SalaryCaseStudy.domain.value.Money;
 
 public class UnionAffilation implements Affilation {
 	private BigDecimal dues;
@@ -21,8 +22,8 @@ public class UnionAffilation implements Affilation {
 		return memberId;
 	}
 
-	public BigDecimal getDues() {
-		return dues;
+	public Money getDues() {
+		return new Money(dues.doubleValue());
 	}
 
 	@Override

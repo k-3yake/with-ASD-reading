@@ -5,15 +5,16 @@ import java.math.BigDecimal;
 import chapter19_SalaryCaseStudy.domain.model.TimeCard;
 import chapter19_SalaryCaseStudy.domain.model.paymentclassfication.HourlyClassfication;
 import chapter19_SalaryCaseStudy.domain.value.DateOnly;
+import chapter19_SalaryCaseStudy.domain.value.Hours;
 import chapter19_SalaryCaseStudy.infla.BusinessExcepction;
 import chapter19_SalaryCaseStudy.infla.PayrollDatabase;
 
 public class AddTimeCardTransaction {
 	private Integer empId;
 	private DateOnly date;
-	private BigDecimal hours;
+	private Hours hours;
 
-	public AddTimeCardTransaction(Integer empId, DateOnly date, BigDecimal hours) {
+	public AddTimeCardTransaction(Integer empId, DateOnly date, Hours hours) {
 		this.empId = empId;
 		this.date = date;
 		this.hours = hours;

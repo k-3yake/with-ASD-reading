@@ -1,9 +1,13 @@
 package chapter19_SalaryCaseStudy.domain.model;
 
+import java.math.BigDecimal;
+
 import chapter19_SalaryCaseStudy.domain.model.affilation.Affilation;
 import chapter19_SalaryCaseStudy.domain.model.paymentclassfication.PaymentClassfication;
 import chapter19_SalaryCaseStudy.domain.model.paymentschedule.PaymentSchedule;
 import chapter19_SalaryCaseStudy.domain.model.paymethod.PayMethod;
+import chapter19_SalaryCaseStudy.domain.value.DateOnly;
+import chapter19_SalaryCaseStudy.domain.value.Money;
 
 
 
@@ -71,6 +75,13 @@ public class Employee {
 	public void setAffilation(Affilation affilation) {
 		this.affilation = affilation;
 	}
+
+	public Money salary() {
+		return getPaymentClassfication().calculatePay();
+	}
 	
-	
+
+	public boolean isPaydate(DateOnly payDate) {
+		return paymentSchedule.isPayDate(payDate);
+	}
 }

@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+repositories {
+    mavenCentral()
+    maven { url 'http://public-maven.classmethod.info/release' }
+    maven { url 'http://public-maven.classmethod.info/snapshot' }
+}
+dependencies {
+	testCompile 'junit:junit:4.11'
+		runtime 'com.h2database:h2:1.4.179'
+    testCompile 'jp.classmethod.testing:cmtest-core:0.4'
+    testCompile 'jp.classmethod.testing:cmtest-db:0.4'
+}

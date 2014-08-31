@@ -21,6 +21,13 @@ import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeMe
 import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeNameTest;
 import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeSalariedTest;
 import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeUnaffilatedTest;
+import chapter19_SalaryCaseStudy.domain.model.TimeCardTest;
+import chapter19_SalaryCaseStudy.domain.model.paymentclassfication.HourlyClassficationTest;
+import chapter19_SalaryCaseStudy.domain.model.paymentschedule.BiweeklyScheduleTest;
+import chapter19_SalaryCaseStudy.domain.model.paymentschedule.MonthlyScheduleTest;
+import chapter19_SalaryCaseStudy.domain.model.paymentschedule.WeeklyScheduleTest;
+import chapter19_SalaryCaseStudy.domain.value.HoursTest;
+import chapter19_SalaryCaseStudy.domain.value.RateTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
@@ -41,6 +48,14 @@ import chapter19_SalaryCaseStudy.application.transaction.changeemployee.ChangeUn
 	ChangeHoldTest.class,
 	ChangeMemberTest.class,
 	ChangeUnaffilatedTest.class,
+	PaydayTest.class,
+	BiweeklyScheduleTest.class,
+	MonthlyScheduleTest.class,
+	WeeklyScheduleTest.class,
+	HourlyClassficationTest.class,
+	TimeCardTest.class,
+	RateTest.class,
+	HoursTest.class,
 })
 public class Chapter19TestSuite {
 

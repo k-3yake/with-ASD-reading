@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
+import java.math.BigDecimal;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +23,7 @@ public class ChangeDirectTest {
 	@Test
 	public void 給与直接引き落としへの変更のテスト() throws Exception {
 		Integer empId = 1;
-		new AddHourlyEmployee(empId,"name","address").execute();
+		new AddHourlyEmployee(empId,"name","address",new BigDecimal(0)).execute();
 		//実行
 		new ChangeDirect(empId,new Bank("account1")).exec();
 		//検証
